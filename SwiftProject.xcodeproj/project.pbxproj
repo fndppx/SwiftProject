@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572199181ED6D3640012F481 /* LoopScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572199171ED6D3640012F481 /* LoopScrollView.swift */; };
 		57403C031ED44C0C00D122B8 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57403C021ED44C0C00D122B8 /* PlayerManager.swift */; };
 		5765C50E1ECE945700BD8BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C50D1ECE945700BD8BC0 /* AppDelegate.swift */; };
 		5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C50F1ECE945700BD8BC0 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		572199171ED6D3640012F481 /* LoopScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopScrollView.swift; sourceTree = "<group>"; };
 		57403C021ED44C0C00D122B8 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		5765C50A1ECE945700BD8BC0 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5765C50D1ECE945700BD8BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				5765C50F1ECE945700BD8BC0 /* ViewController.swift */,
 				578B44571ED4213100FBA7DA /* SecondViewController.swift */,
 				57403C021ED44C0C00D122B8 /* PlayerManager.swift */,
+				572199171ED6D3640012F481 /* LoopScrollView.swift */,
 				5765C5141ECE945700BD8BC0 /* Assets.xcassets */,
 				5765C5161ECE945700BD8BC0 /* LaunchScreen.storyboard */,
 				5765C5191ECE945700BD8BC0 /* Info.plist */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				578B44591ED4213100FBA7DA /* SecondViewController.swift in Sources */,
+				572199181ED6D3640012F481 /* LoopScrollView.swift in Sources */,
 				5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */,
 				57403C031ED44C0C00D122B8 /* PlayerManager.swift in Sources */,
 				5765C50E1ECE945700BD8BC0 /* AppDelegate.swift in Sources */,

@@ -31,6 +31,9 @@ class PlayerManager: NSObject {
     var status:QCPlaybackPlayerStatus?
     var channelId:NSString?
     
+    var playing:Bool=false
+    
+    
     private var player:AVPlayer?
     
     
@@ -68,7 +71,7 @@ class PlayerManager: NSObject {
     
     
     fileprivate override init() {
-    
+        
         
     }
 
