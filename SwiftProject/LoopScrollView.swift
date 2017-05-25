@@ -75,7 +75,8 @@ class LoopScrollView: UIView ,UIScrollViewDelegate{
         self.contentScrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
         contentScrollView.contentSize = CGSize(width: self.frame.size.width*3, height: self.frame.size.height)
         contentScrollView.isPagingEnabled = true;
-        contentScrollView.bounces = true;
+        contentScrollView.showsHorizontalScrollIndicator = false
+        contentScrollView.bounces = false;
         contentScrollView.delegate = self;
         contentScrollView.backgroundColor = UIColor.gray
         self.addSubview(contentScrollView)
@@ -123,7 +124,6 @@ class LoopScrollView: UIView ,UIScrollViewDelegate{
     }
     
     func setScrollViewOfImage() {
-//        print(self.imageArray?[indexPage])
         self.currentImageView.image = UIImage(data:try! Data(contentsOf: (self.imageArray?[indexPage])!))
         self.leftImageView.image = UIImage(data:try! Data(contentsOf: (self.imageArray?[self.getLastImageViewIndex(indexOfCurrentImage: indexPage)])!))
         self.nextImageView.image = UIImage(data:try! Data(contentsOf: (self.imageArray?[self.getNextImageViewIndex(indexOfCurrentImage: indexPage)])!))
