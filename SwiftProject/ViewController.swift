@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+let array = ["LoopScrollView"]
 class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
@@ -22,12 +22,12 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return array.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let  cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "testcell")
-        cell.textLabel?.text = "AudioPlayer";
+        cell.textLabel?.text = array[indexPath.row];
         return cell
         
     }
