@@ -115,6 +115,16 @@ class LoopScrollView: UIView ,UIScrollViewDelegate{
         timer = nil
     }
     
+    public func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    public func startTimer() {
+        if (self.timer === nil) {
+            self.timer = Timer.scheduledTimer(timeInterval: AutoScrollTimeInterval, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        }
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.x

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		572199181ED6D3640012F481 /* LoopScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572199171ED6D3640012F481 /* LoopScrollView.swift */; };
+		5721F94B1EE7F4E40070B4FB /* HTTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5721F94A1EE7F4E40070B4FB /* HTTPManager.swift */; };
 		57403C031ED44C0C00D122B8 /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57403C021ED44C0C00D122B8 /* PlayerManager.swift */; };
 		5765C50E1ECE945700BD8BC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C50D1ECE945700BD8BC0 /* AppDelegate.swift */; };
 		5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C50F1ECE945700BD8BC0 /* ViewController.swift */; };
@@ -15,6 +16,10 @@
 		5765C5181ECE945700BD8BC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5765C5161ECE945700BD8BC0 /* LaunchScreen.storyboard */; };
 		5765C5231ECE945700BD8BC0 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C5221ECE945700BD8BC0 /* SwiftProjectTests.swift */; };
 		5765C52E1ECE945700BD8BC0 /* SwiftProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765C52D1ECE945700BD8BC0 /* SwiftProjectUITests.swift */; };
+		5772BB9A1EEE814500D1DBB6 /* HCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772BB991EEE814500D1DBB6 /* HCountDownView.swift */; };
+		5772BB9C1EEE916F00D1DBB6 /* BallCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */; };
+		5772BB9E1EEE953500D1DBB6 /* BallCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */; };
+		5772BBA01EEE9A1300D1DBB6 /* BallCountDownTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */; };
 		578B44591ED4213100FBA7DA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B44571ED4213100FBA7DA /* SecondViewController.swift */; };
 		578B445E1ED442D400FBA7DA /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578B445D1ED442D400FBA7DA /* Second.storyboard */; };
 		57A5C8941ED824B500908D4D /* ErrorRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5C8931ED824B500908D4D /* ErrorRetryView.swift */; };
@@ -41,6 +46,8 @@
 /* Begin PBXFileReference section */
 		502D2EF9A3C54B0B74F97B51 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		572199171ED6D3640012F481 /* LoopScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopScrollView.swift; sourceTree = "<group>"; };
+		5721F9461EE7F4CD0070B4FB /* SwiftProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		5721F94A1EE7F4E40070B4FB /* HTTPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPManager.swift; sourceTree = "<group>"; };
 		57403C021ED44C0C00D122B8 /* PlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		5765C50A1ECE945700BD8BC0 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5765C50D1ECE945700BD8BC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +61,10 @@
 		5765C5291ECE945700BD8BC0 /* SwiftProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5765C52D1ECE945700BD8BC0 /* SwiftProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProjectUITests.swift; sourceTree = "<group>"; };
 		5765C52F1ECE945700BD8BC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5772BB991EEE814500D1DBB6 /* HCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCountDownView.swift; sourceTree = "<group>"; };
+		5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountDownView.swift; sourceTree = "<group>"; };
+		5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BallCountDownView.xib; sourceTree = "<group>"; };
+		5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountDownTouch.swift; sourceTree = "<group>"; };
 		578B44571ED4213100FBA7DA /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		578B445D1ED442D400FBA7DA /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		57A5C8931ED824B500908D4D /* ErrorRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRetryView.swift; sourceTree = "<group>"; };
@@ -126,10 +137,16 @@
 				57403C021ED44C0C00D122B8 /* PlayerManager.swift */,
 				572199171ED6D3640012F481 /* LoopScrollView.swift */,
 				57A5C8931ED824B500908D4D /* ErrorRetryView.swift */,
+				5772BB991EEE814500D1DBB6 /* HCountDownView.swift */,
+				5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */,
+				5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */,
+				5721F94A1EE7F4E40070B4FB /* HTTPManager.swift */,
+				5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */,
 				5765C5141ECE945700BD8BC0 /* Assets.xcassets */,
 				5765C5161ECE945700BD8BC0 /* LaunchScreen.storyboard */,
 				5765C5191ECE945700BD8BC0 /* Info.plist */,
 				578B445D1ED442D400FBA7DA /* Second.storyboard */,
+				5721F9461EE7F4CD0070B4FB /* SwiftProject-Bridging-Header.h */,
 			);
 			path = SwiftProject;
 			sourceTree = "<group>";
@@ -233,6 +250,7 @@
 					5765C5091ECE945700BD8BC0 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = NTYS5Y3BQZ;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					5765C51D1ECE945700BD8BC0 = {
@@ -275,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				578B445E1ED442D400FBA7DA /* Second.storyboard in Resources */,
+				5772BB9E1EEE953500D1DBB6 /* BallCountDownView.xib in Resources */,
 				5765C5181ECE945700BD8BC0 /* LaunchScreen.storyboard in Resources */,
 				5765C5151ECE945700BD8BC0 /* Assets.xcassets in Resources */,
 			);
@@ -349,11 +368,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5721F94B1EE7F4E40070B4FB /* HTTPManager.swift in Sources */,
 				578B44591ED4213100FBA7DA /* SecondViewController.swift in Sources */,
 				572199181ED6D3640012F481 /* LoopScrollView.swift in Sources */,
+				5772BB9A1EEE814500D1DBB6 /* HCountDownView.swift in Sources */,
+				5772BBA01EEE9A1300D1DBB6 /* BallCountDownTouch.swift in Sources */,
 				5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */,
 				57403C031ED44C0C00D122B8 /* PlayerManager.swift in Sources */,
 				57A5C8941ED824B500908D4D /* ErrorRetryView.swift in Sources */,
+				5772BB9C1EEE916F00D1DBB6 /* BallCountDownView.swift in Sources */,
 				5765C50E1ECE945700BD8BC0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,12 +524,15 @@
 			baseConfigurationReference = 502D2EF9A3C54B0B74F97B51 /* Pods-SwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NTYS5Y3BQZ;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingclass.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftProject/SwiftProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -516,12 +542,14 @@
 			baseConfigurationReference = D6479D58F9B4A10044918F85 /* Pods-SwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = NTYS5Y3BQZ;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingclass.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftProject/SwiftProject-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
