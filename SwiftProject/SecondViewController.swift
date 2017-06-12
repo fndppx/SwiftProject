@@ -80,6 +80,7 @@ class SecondViewController: UIViewController {
     
     func setupBallView()  {
         BallCountDownTouch.sharedInstance.show()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

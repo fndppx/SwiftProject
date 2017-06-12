@@ -42,7 +42,7 @@ class BallCountDownTouch: UIWindow {
         ballCountDownView.layer.cornerRadius = frame.size.width/2
         self.addSubview(ballCountDownView)
         ballCountView = ballCountDownView
-        
+        ballCountView.setRestTime(restTime: 1000)
         let panGesture:UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(changePostion(pan:)))
         ballCountDownView.addGestureRecognizer(panGesture)
     }
