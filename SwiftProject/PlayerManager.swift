@@ -234,25 +234,25 @@ class PlayerManager: NSObject {
             return
         }
         
-        switch interruptionType.uintValue {
-        case AVAudioSessionInterruptionType.began.rawValue:
-            if self.isPlaying(){
-                self.pauseToResume(needToResume: true)
-            }
-            break;
-        case AVAudioSessionInterruptionType.ended.rawValue:
-            if interruptionOption.uintValue == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
-               try?AVAudioSession.sharedInstance().setActive(true)
-                if (self.player != nil){
-                    self.playSuccess{}
-                }
-                
-            }
-            break;
-        default:
-            break
-            
-        }
+//        switch interruptionType {
+//        case AVAudioSessionInterruptionType.began.hashValue:
+//            if self.isPlaying(){
+//                self.pauseToResume(needToResume: true)
+//            }
+//            break;
+//        case AVAudioSessionInterruptionType.ended.u:
+//            if interruptionOption.uintValue == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
+//               try?AVAudioSession.sharedInstance().setActive(true)
+//                if (self.player != nil){
+//                    self.playSuccess{}
+//                }
+//                
+//            }
+//            break;
+//        default:
+//            break
+//            
+//        }
         
     }
     

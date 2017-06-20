@@ -24,6 +24,7 @@
 		578B445E1ED442D400FBA7DA /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578B445D1ED442D400FBA7DA /* Second.storyboard */; };
 		57A5C8941ED824B500908D4D /* ErrorRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5C8931ED824B500908D4D /* ErrorRetryView.swift */; };
 		77190BF07A7DED7F9D4BF3EE /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE113116A310BAAA946DCB2F /* Pods_SwiftProject.framework */; };
+		ABE177821EF8882A00469134 /* SizeClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE177811EF8882A00469134 /* SizeClassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		578B44571ED4213100FBA7DA /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		578B445D1ED442D400FBA7DA /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		57A5C8931ED824B500908D4D /* ErrorRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRetryView.swift; sourceTree = "<group>"; };
+		ABE177811EF8882A00469134 /* SizeClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassViewController.swift; sourceTree = "<group>"; };
 		CE113116A310BAAA946DCB2F /* Pods_SwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6479D58F9B4A10044918F85 /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 				57A5C8931ED824B500908D4D /* ErrorRetryView.swift */,
 				5772BB991EEE814500D1DBB6 /* HCountDownView.swift */,
 				5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */,
+				ABE177811EF8882A00469134 /* SizeClassViewController.swift */,
 				5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */,
 				5721F94A1EE7F4E40070B4FB /* HTTPManager.swift */,
 				5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */,
@@ -343,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D769FA174F07942C5862DA32 /* [CP] Copy Pods Resources */ = {
@@ -375,6 +378,7 @@
 				5772BBA01EEE9A1300D1DBB6 /* BallCountDownTouch.swift in Sources */,
 				5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */,
 				57403C031ED44C0C00D122B8 /* PlayerManager.swift in Sources */,
+				ABE177821EF8882A00469134 /* SizeClassViewController.swift in Sources */,
 				57A5C8941ED824B500908D4D /* ErrorRetryView.swift in Sources */,
 				5772BB9C1EEE916F00D1DBB6 /* BallCountDownView.swift in Sources */,
 				5765C50E1ECE945700BD8BC0 /* AppDelegate.swift in Sources */,

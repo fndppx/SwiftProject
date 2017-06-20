@@ -17,6 +17,7 @@ public enum ViewControllerOptionType:Int{
     case loopScrollView
     case avplayer
     case ballView
+    case sizeClassView
 
 }
 class SecondViewController: UIViewController {
