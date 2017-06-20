@@ -34,12 +34,13 @@ class BallCountDownView: UIView {
 
     func setRestTime(restTime:Double)  {
         let duration:Double = floor(restTime)
-//        duration/minute
-//        let hourRemaining:Double = floor(duration/60*minutes)
         let minutesRemaining:Double = floor(fmod(duration/minutes, minutes))
         let secondsRemaining:Double = floor(fmod(duration, minutes))
 
-        self.timeLabel.text = String.init(format: "%0.20f:%0.20f",minutesRemaining.isNaN as CVarArg , secondsRemaining.isNaN as CVarArg)
+        //小数点前面位数 和保留几位小数
+        let textContent = String.init(format: "%02.0f:%02.0f", arguments: [minutesRemaining.isNaN ? 0 : minutesRemaining,secondsRemaining.isNaN ? 0 : secondsRemaining])
+        print(textContent)
+        self.timeLabel.text = textContent
     }
     
     

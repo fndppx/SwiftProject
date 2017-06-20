@@ -26,7 +26,11 @@ class SecondViewController: UIViewController {
     var playerManager:PlayerManager?
     var optionType:ViewControllerOptionType?
 
+    var currentTimer = 0
     
+    var timer:Timer?
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +58,8 @@ class SecondViewController: UIViewController {
         loopView?.stopTimer()
         playerManager?.pause()
         BallCountDownTouch.sharedInstance.dissMiss()
+        timer?.invalidate()
+        timer = nil
     }
     //析构器
     deinit{
@@ -79,8 +85,25 @@ class SecondViewController: UIViewController {
     }
     
     func setupBallView()  {
-        BallCountDownTouch.sharedInstance.show()
         
+        BallCountDownTouch.sharedInstance.show()
+        BallCountDownTouch.sharedInstance.ballCountView.setRestTime(restTime: 360)
+//        if #available(iOS 10.0, *) {
+//            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+//                currentTimer += 1
+//                BallCountDownTouch.sharedInstance.ballCountView.setRestTime(restTime: Double(360-currentTimer))
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
+       timer =  Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refershTime), userInfo: nil, repeats: true)
+        
+    }
+    
+    func refershTime()  {
+        currentTimer += 1
+        BallCountDownTouch.sharedInstance.ballCountView.setRestTime(restTime: Double(360-currentTimer))
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -19,12 +19,13 @@ class BallCountDownTouch: UIWindow {
     }
     */
     
+    
     var ballCountView:BallCountDownView!
     
     
     class var sharedInstance: BallCountDownTouch {
         struct Static {
-            static let instance: BallCountDownTouch = BallCountDownTouch.init(frame: CGRect.init(x: 0, y: 0, width: 49, height: 49))
+            static let instance: BallCountDownTouch = BallCountDownTouch.init(frame: CGRect.init(x: 0, y: 100, width: 49, height: 49))
         }
         
         return Static.instance
@@ -42,7 +43,6 @@ class BallCountDownTouch: UIWindow {
         ballCountDownView.layer.cornerRadius = frame.size.width/2
         self.addSubview(ballCountDownView)
         ballCountView = ballCountDownView
-        ballCountView.setRestTime(restTime: 1000)
         let panGesture:UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(changePostion(pan:)))
         ballCountDownView.addGestureRecognizer(panGesture)
     }
