@@ -20,6 +20,7 @@
 		5772BB9C1EEE916F00D1DBB6 /* BallCountDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */; };
 		5772BB9E1EEE953500D1DBB6 /* BallCountDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */; };
 		5772BBA01EEE9A1300D1DBB6 /* BallCountDownTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */; };
+		5777E5FC1F025C72000E2271 /* ModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5777E5FB1F025C72000E2271 /* ModelTest.swift */; };
 		578B44591ED4213100FBA7DA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B44571ED4213100FBA7DA /* SecondViewController.swift */; };
 		578B445E1ED442D400FBA7DA /* Second.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578B445D1ED442D400FBA7DA /* Second.storyboard */; };
 		57A5C8941ED824B500908D4D /* ErrorRetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5C8931ED824B500908D4D /* ErrorRetryView.swift */; };
@@ -66,6 +67,7 @@
 		5772BB9B1EEE916F00D1DBB6 /* BallCountDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountDownView.swift; sourceTree = "<group>"; };
 		5772BB9D1EEE953500D1DBB6 /* BallCountDownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BallCountDownView.xib; sourceTree = "<group>"; };
 		5772BB9F1EEE9A1300D1DBB6 /* BallCountDownTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountDownTouch.swift; sourceTree = "<group>"; };
+		5777E5FB1F025C72000E2271 /* ModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelTest.swift; sourceTree = "<group>"; };
 		578B44571ED4213100FBA7DA /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		578B445D1ED442D400FBA7DA /* Second.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Second.storyboard; sourceTree = "<group>"; };
 		57A5C8931ED824B500908D4D /* ErrorRetryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorRetryView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5765C50D1ECE945700BD8BC0 /* AppDelegate.swift */,
+				5777E5FB1F025C72000E2271 /* ModelTest.swift */,
 				5765C50F1ECE945700BD8BC0 /* ViewController.swift */,
 				578B44571ED4213100FBA7DA /* SecondViewController.swift */,
 				57403C021ED44C0C00D122B8 /* PlayerManager.swift */,
@@ -346,7 +349,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D769FA174F07942C5862DA32 /* [CP] Copy Pods Resources */ = {
@@ -374,6 +377,7 @@
 				5721F94B1EE7F4E40070B4FB /* HTTPManager.swift in Sources */,
 				578B44591ED4213100FBA7DA /* SecondViewController.swift in Sources */,
 				572199181ED6D3640012F481 /* LoopScrollView.swift in Sources */,
+				5777E5FC1F025C72000E2271 /* ModelTest.swift in Sources */,
 				5772BB9A1EEE814500D1DBB6 /* HCountDownView.swift in Sources */,
 				5772BBA01EEE9A1300D1DBB6 /* BallCountDownTouch.swift in Sources */,
 				5765C5101ECE945700BD8BC0 /* ViewController.swift in Sources */,

@@ -14,19 +14,22 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
+  - MJExtension (= 3.0.13)
   - MJRefresh (= 3.1.12)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 34edc0dcc9e74be53802bad2d504c41dc5168328
+PODFILE CHECKSUM: 74121ac5a04f8e3dd41d300a78e99e3e65faf67a
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

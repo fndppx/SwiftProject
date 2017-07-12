@@ -9,6 +9,9 @@
 
 import UIKit
 
+let maxDistance:CGFloat = 50
+
+
 class BallCountDownTouch: UIWindow {
 
     /*
@@ -22,10 +25,22 @@ class BallCountDownTouch: UIWindow {
     
     var ballCountView:BallCountDownView!
     
+    lazy var smallCicreView:UIView? = {
+        let smallView = UIView.init()
+        smallView.backgroundColor = UIColor.red
+        return smallView
+    }()
+    
+    lazy var shapeLayer:CAShapeLayer?={
+        let shapeLayer = CAShapeLayer.init()
+        shapeLayer.fillColor = UIColor.red.cgColor
+        
+        return shapeLayer
+    }()
     
     class var sharedInstance: BallCountDownTouch {
         struct Static {
-            static let instance: BallCountDownTouch = BallCountDownTouch.init(frame: CGRect.init(x: 0, y: 100, width: 49, height: 49))
+            static let instance: BallCountDownTouch = BallCountDownTouch.init(frame: CGRect.init(x: UIScreen.main.bounds.size.width-49, y: 100, width: 49, height: 49))
         }
         
         return Static.instance
@@ -45,6 +60,13 @@ class BallCountDownTouch: UIWindow {
         ballCountView = ballCountDownView
         let panGesture:UIPanGestureRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(changePostion(pan:)))
         ballCountDownView.addGestureRecognizer(panGesture)
+        
+        
+        self.smallCicreView?.bounds = CGRect.init(x: 0, y: 0, width: ballCountDownView.bounds.size.width, height: ballCountDownView.bounds.size.height)
+        smallCicreView?.center = CGPoint.init(x: ballCountDownView.center.x+ballCountDownView.frame.size.width/2 - (self.smallCicreView?.frame.width)!/2, y: ballCountDownView.center.y)
+        ballCountDownView.insertSubview(smallCicreView!, at: 0)
+        ballCountDownView.layer.insertSublayer(self.shapeLayer!, below: self.smallCicreView?.layer)
+        
     }
    
     func dissMiss () {
@@ -80,6 +102,20 @@ class BallCountDownTouch: UIWindow {
             break
         default:
             var frame = self.frame
+            
+            let distance = distanceWithPointA(pointA: ballCountView.center, pointB: (self.smallCicreView?.center)!)
+        
+            if distance < maxDistance {
+//                var radius: CGFloat = pan.view!.bounds.size.width > pan.view!.bounds.size.height ? pan.view!.bounds.size.width*0.5 : pan.view!.bounds.size.height*0.5
+                self.smallCicreView?.bounds = CGRect.init(x:0, y:0,width: 10,height: 10)
+                self.smallCicreView?.layer.cornerRadius = (10)*0.5
+                if smallCicreView?.isHidden == false && distance > 0 {
+                    self.shapeLayer?.path = self.pathWithBigCirCleView(bigCircleView: self, smallCircleView: smallCicreView).cgPath
+                }
+
+            }else{
+                
+            }
             //超出边界
             if frame.origin.x < 0 {
                 frame.origin.x = 0
@@ -109,9 +145,49 @@ class BallCountDownTouch: UIWindow {
         }
     }
     
+    private func distanceWithPointA(pointA:CGPoint,pointB:CGPoint) -> CGFloat {
+        let x: CGFloat = pointA.x-pointB.x
+        let y: CGFloat = pointA.y-pointB.y
+        return CGFloat(sqrtf(Float(x*x+y*y)))
+    }
+    
+    private func pathWithBigCirCleView(bigCircleView:UIView!,smallCircleView:UIView!) -> UIBezierPath {
+        let bigCenter: CGPoint = bigCircleView.center
+        let bigX: CGFloat = bigCenter.x
+        let bigY: CGFloat = bigCenter.y
+        let bigRadius: CGFloat = bigCircleView.bounds.size.width*0.5
+        let smallCenter: CGPoint = smallCircleView.center
+        let smallX: CGFloat = smallCenter.x
+        let smallY: CGFloat = smallCenter.y
+        let smallRadius: CGFloat = smallCircleView.bounds.size.width*0.5
+        let d: CGFloat = distanceWithPointA(pointA: smallCenter, pointB: bigCenter)
+        let sina: CGFloat = (bigX-smallX)/d
+        let cosa: CGFloat = (bigY-smallY)/d
+        let pointA: CGPoint = CGPoint.init(x: smallX-smallRadius*cosa, y: smallY+smallRadius*sina)
+        let pointB: CGPoint = CGPoint.init(x: smallX+smallRadius*cosa, y: smallY-smallRadius*sina)
+        let pointC: CGPoint = CGPoint.init(x: bigX+bigRadius*cosa, y: bigY-bigRadius*sina)
+        let pointD: CGPoint = CGPoint.init(x: bigX-bigRadius*cosa, y: bigY+bigRadius*sina)
+        let pointO: CGPoint = CGPoint.init(x: pointA.x+d/6*sina, y: pointA.y+d/6*cosa)
+        let pointP: CGPoint = CGPoint.init(x: pointB.x+d/6*sina, y: pointB.y+d/6*cosa)
+        let path: UIBezierPath = UIBezierPath()
+        // A
+        path.move(to: pointA)
+        // AB
+        path.addLine(to: pointB)
+        // 绘制BC曲线
+        path.addQuadCurve(to: pointC, controlPoint: pointP)
+        // CD
+        path.addLine(to: pointD)
+        // 绘制DA曲线
+        path.addQuadCurve(to: pointA, controlPoint: pointO)
+        return path
+
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
 }
+
+
