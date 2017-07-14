@@ -1,11 +1,25 @@
-# SwiftProject
+# Swift Note
 
 
-AnyHashable 桥接类型
+* Objc Swift混编的问题
 
-swift 中 class_copyPropertyList 只能读取NSObject subclass ，所以对于有些类型如果需要class_copyPropertyList获取到,需要用AnyHashable声明
+>属性变量声明
 
-block
+swift 文件中声明的可选值?(基础变量如Bool,Int等)属性，在swift.h 桥接文件中是看不到的，并且通过class_copyPropertyList是获取不到相应的属性值的，针对这种情况需要在swift文件中声明属性的时候不能携带 !和？符号 并且需要在init方法中初始化此变量属性。
+
+```
+声明
+ var totalDuration:Int
+初始化
+ override init() {
+        self.totalDuration = 0
+        super.init()
+    }
+```
+
+* AnyHashable 类型对应 NSObject类型,Any对应id类型
+
+>block
 
     var testResponse : (() -> ())?
     var updateBallViewCountdown : ((_ time:Double) -> ())?
@@ -19,11 +33,6 @@ view.blockLogin = {(obj_bolck:String) in
             }
 ```
             
- 
-oc 调用 swift的属性的时候 swift文件要给与初始值，并且不能加？ 或者 ！
-
-    var isValid:Bool = false
-
 
 GCD
 

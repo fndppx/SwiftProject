@@ -154,7 +154,7 @@ class PlayerManager: NSObject {
         if(self.player?.currentItem?.isPlaybackLikelyToKeepUp)!{
             self.status = QCPlaybackPlayerStatus.QCPlaybackPlayerStatusLoading
         }
-//        NotificationCenter
+
         self.player?.play()
         success()
     }
@@ -166,8 +166,6 @@ class PlayerManager: NSObject {
         self.needToResume = needToResume
         self.status = QCPlaybackPlayerStatus.QCPlaybackPlayerStatusPaused
         self.player?.pause()
-
-//        NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>)
     }
     func reset() {
         status = QCPlaybackPlayerStatus.QCPlaybackPlayerStatusUnknow
@@ -179,9 +177,8 @@ class PlayerManager: NSObject {
             self.player?.currentItem?.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
             self.player = nil
         }
-//        url = nil
+        url = nil
         
-//        NotificationCenter.default.post(name: NSNotification.Name, object: <#T##Any?#>)
     }
     
     
@@ -227,32 +224,34 @@ class PlayerManager: NSObject {
     }
 
     @objc private func handleAudioSessionInterruption(notif:Notification){
-        let interruptionType:AnyObject = notif.userInfo?.index(forKey: AVAudioSessionInterruptionTypeKey)! as AnyObject
-        let interruptionOption:AnyObject = notif.userInfo?.index(forKey: AVAudioSessionInterruptionOptionKey)! as AnyObject
+        let interruptionType = notif.userInfo?[AVAudioSessionInterruptionTypeKey]
+        
+        
+        let interruptionOption = notif.userInfo?[AVAudioSessionInterruptionOptionKey]
 
         if (self.needToResume)!{
             return
         }
         
-//        switch interruptionType {
-//        case AVAudioSessionInterruptionType.began.hashValue:
-//            if self.isPlaying(){
-//                self.pauseToResume(needToResume: true)
-//            }
-//            break;
-//        case AVAudioSessionInterruptionType.ended.u:
-//            if interruptionOption.uintValue == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
-//               try?AVAudioSession.sharedInstance().setActive(true)
-//                if (self.player != nil){
-//                    self.playSuccess{}
-//                }
-//                
-//            }
-//            break;
-//        default:
-//            break
-//            
-//        }
+        switch interruptionType as! UInt {
+        case AVAudioSessionInterruptionType.began.rawValue:
+            if self.isPlaying(){
+                self.pauseToResume(needToResume: true)
+            }
+            break;
+        case AVAudioSessionInterruptionType.ended.rawValue:
+            if interruptionOption as! UInt == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
+               try?AVAudioSession.sharedInstance().setActive(true)
+                if (self.player != nil){
+                    self.playSuccess{}
+                }
+                
+            }
+            break;
+        default:
+            break
+            
+        }
         
     }
     
