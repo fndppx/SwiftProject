@@ -12,16 +12,19 @@
 
 import UIKit
 
-
+import AudioToolbox
 public enum ViewControllerOptionType:Int{
     case loopScrollView
     case avplayer
     case ballView
     case sizeClassView
+    case playSystemVoice
+
 
 }
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var playSystemVoiceButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     var loopView:LoopScrollView?
     var playerManager:PlayerManager?
@@ -45,6 +48,9 @@ class SecondViewController: UIViewController {
             break
         case ViewControllerOptionType.ballView.rawValue?:
             self.setupBallView()
+            break
+        case ViewControllerOptionType.playSystemVoice.rawValue?:
+            self.setupPlayVoiceView()
             break
         default:
             break
@@ -84,7 +90,11 @@ class SecondViewController: UIViewController {
         }
         playerManager = player
     }
-    
+    func setupPlayVoiceView()  {
+        
+       self.playSystemVoiceButton.isHidden = false
+        
+    }
     func setupBallView()  {
         
         BallCountDownTouch.sharedInstance.show()
@@ -119,6 +129,41 @@ class SecondViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func playVoicePressed(_ sender: Any) {
+//        NSString *path = [[NSBundle bundleWithIdentifier:@"com.apple.UIKit"] pathForResource:@"Tock" ofType:@"aiff"];
+//        if (path) {
+//            SystemSoundID theSoundID;
+//            OSStatus error =  AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &theSoundID);
+//            if (error == kAudioServicesNoError) {
+//                AudioServicesPlaySystemSound(theSoundID);
+//            }
+//            else
+//            {
+//                NSLog(@"Failed to create sound ");
+//            }
+//        }
+        
+//        let array:Array = Bundle.main.loadNibNamed("BallCountDownView", owner: self, options: nil)!
+//        let ballCountDownView:BallCountDownView = array[0] as! BallCountDownView
+//
+//        let path:NSURL = NSURL.fileURL(withPath: "/System/Library/Sounds") as NSURL
+        let path = Bundle.init(identifier: "com.apple.UIKit")?.path(forResource: "Tock", ofType: "aiff")
+        if ((path) != nil) {
+            //建立的SystemSoundID对象
+            var soundID:SystemSoundID = 0
+            //获取声音地址
+//            let path = NSBundle.mainBundle().pathForResource("msg", ofType: "wav")
+            //地址转换
+            let baseURL = NSURL(fileURLWithPath: path!)
+            //赋值
+            AudioServicesCreateSystemSoundID(path as! CFURL
+                , &soundID)
+            //播放声音
+            AudioServicesPlaySystemSound(soundID)
+            
+        }
+        
+    }
     
     
 }

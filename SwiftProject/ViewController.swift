@@ -7,9 +7,9 @@
 //
 
 import UIKit
-let array = ["LoopScrollView","AVPlayer","BallCountView","SizeClass"]
+let array = ["LoopScrollView","AVPlayer","BallCountView","SizeClass","PlaySystemVoice"]
 //字典的两种写法
-let dic:NSDictionary = ["LoopScrollView":ViewControllerOptionType.loopScrollView as AnyObject,"AVPlayer":ViewControllerOptionType.avplayer as AnyObject,"BallCountView":ViewControllerOptionType.ballView,"SizeClass":ViewControllerOptionType.ballView]
+let dic:NSDictionary = ["LoopScrollView":ViewControllerOptionType.loopScrollView as AnyObject,"AVPlayer":ViewControllerOptionType.avplayer as AnyObject,"BallCountView":ViewControllerOptionType.ballView,"SizeClass":ViewControllerOptionType.ballView,"PlaySystemVoice":ViewControllerOptionType.playSystemVoice]
 //let dic:[String:AnyObject] = ["LoopScrollView":ViewControllerOptionType.loopScrollView as AnyObject,"AVPlayer":ViewControllerOptionType.avplayer as AnyObject]
 
 class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
